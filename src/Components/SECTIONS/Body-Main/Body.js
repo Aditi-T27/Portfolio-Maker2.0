@@ -71,8 +71,8 @@
 
 import React from "react";
 import Image from "./BgImage";
-import Division from "./Division";
-import Card from "./EditFunctions/Div/Card";
+import Division from "../../../Division";
+import Card from "./ADD-DIV/Div-components/Card";
 
 const componentMap = {
   Image: Image,

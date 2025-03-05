@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import NavEdit from "./EditFunctions/NavEdit";
-import DivEdit from "./EditFunctions/Div/DivEdit";
+import NavEdit from "./SECTIONS/Header-Main/Edit-Function/NavEdit";
+import DivEdit from "./SECTIONS/Body-Main/ADD-DIV/Div-Edit/DivEdit";
 
 const LeftColumn = ({ setSaveBtn,onComponentSelect, onSectionSelect ,setName,setNameSize, setLogoColor ,setItemColor ,setBgColor,setNavAlign,addDiv,addComponents}) => {
     const [selectedSection, setSelectedSection] = useState(null);

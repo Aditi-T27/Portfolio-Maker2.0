@@ -1,8 +1,8 @@
 
 import React from "react";
-import Header from "./Header";
-import Body from "./Body";
-import Footer from "./Footer";
+import Header from "./SECTIONS/Header-Main/Header";
+import Body from "./SECTIONS/Body-Main/Body";
+import Footer from "./SECTIONS/Footer-Main/Footer";
 
 
 const Canvas = ({ components,navName,navNameSize,navLogoColor,navBgColor,navItemColor,navAlign,divs}) => {
