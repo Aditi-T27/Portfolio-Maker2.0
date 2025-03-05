@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import NavEdit from "./SECTIONS/Header-Main/Edit-Function/NavEdit";
 import DivEdit from "./SECTIONS/Body-Main/ADD-DIV/Div-Edit/DivEdit";
 
-const LeftColumn = ({ setSaveBtn,onComponentSelect, onSectionSelect ,setName,setNameSize, setLogoColor ,setItemColor ,setBgColor,setNavAlign,addDiv,addComponents}) => {
+const LeftColumn = ({ setSaveBtn,onComponentSelect, onSectionSelect ,setName,setNameSize, setLogoColor ,setItemColor ,setBgColor,setNavAlign,addDiv,addComponents,divs}) => {
     const [selectedSection, setSelectedSection] = useState(null);
     const [editComp,setEditcomp]=useState("");
     // Navbar editing
@@ -54,7 +54,7 @@ const LeftColumn = ({ setSaveBtn,onComponentSelect, onSectionSelect ,setName,set
            
             {editComp === "Navbar" ? <NavEdit setName ={setName } setNameSize={setNameSize} setLogoColor={setLogoColor} setItemColor={setItemColor} setBgColor={setBgColor} setNavAlign={setNavAlign} /> : null}
            
-             {editComp === "Division" ? <DivEdit setSaveBtn={setSaveBtn} addDiv={addDiv} addComponents={addComponents}/> : null}
+             {editComp === "Division" ? <DivEdit setSaveBtn={setSaveBtn} addDiv={addDiv} addComponents={addComponents} divs={divs}/> : null}
           </>
         )}
       </div>

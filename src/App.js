@@ -115,7 +115,7 @@ const addComponents = (Component, divId, componentProps) => {
         onSectionSelect={setSelectedSection} 
         setName={setName}  setNameSize={setNameSize}
         setLogoColor={setLogoColor} setItemColor={setItemColor} setBgColor={setBgColor} setNavAlign={setNavAlign}
-        setSaveBtn={setSaveBtn} addDiv={addDiv} addComponents={addComponents}// Allow LeftColumn to update selected section
+        setSaveBtn={setSaveBtn} addDiv={addDiv} addComponents={addComponents}  divs={divs}// Allow LeftColumn to update selected section
       />
       {/* {saveBtn==="yes"?(addDiv(),saveBtn("No")):null} */}
       <Canvas components={selectedComponents} divs={divs} navName={navName} navNameSize={navNameSize} navLogoColor={navLogoColor} navBgColor={navBgColor} navItemColor={navItemColor} navAlign={navAlign}/>

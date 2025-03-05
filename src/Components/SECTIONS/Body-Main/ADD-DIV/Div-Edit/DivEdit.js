@@ -12,8 +12,12 @@ const componentMap = {
   TextBox: TextBox,
   BgImage: BgImage,
 };
+function LocateComponent(cmpId,divName){
+    //Here connect to the card editor form via the cmp id and div name this will allow access to edit the 
+    // card via cmp edit and make that particular editable again
+}
 
-function DivEdit({ setSaveBtn ,addDiv,addComponents}) {
+function DivEdit({ setSaveBtn ,addDiv,addComponents,divs}) {
   const [divName, setDivName] = useState("");
   const [savedDivName, setSavedDivName] = useState(null);
   const [selectedComponent, setSelectedComponent] = useState(null);
@@ -27,13 +31,6 @@ function DivEdit({ setSaveBtn ,addDiv,addComponents}) {
     addDiv(divName);
   };
 
-  // const compClick=(key)=>{
-  //   setSelectedComponent(key);
-  //   addComponents(key,divName)
-  // };
-
-
-
   const compClick = (key) => {
     setSelectedComponent(key);
     
@@ -45,15 +42,7 @@ function DivEdit({ setSaveBtn ,addDiv,addComponents}) {
     addComponents(key, divName, componentProps[key]);  // Passing the props to the component
   };
   
-
-  // Move state update inside useEffect
-//   useEffect(() => {
-//     if (savedDivName) {
-//       setSaveBtn("Yes");
-//     }
-//   }, [savedDivName]); // Runs only when `savedDivName` changes
-
-  return (
+return (
     <div className="p-4">
       <h2 className="text-xl font-bold mb-4">Enter Div Name</h2>
 
@@ -85,14 +74,23 @@ function DivEdit({ setSaveBtn ,addDiv,addComponents}) {
           <h3 className="text-lg font-semibold mt-4">
             Div Name: <span className="text-blue-500">{savedDivName}</span>
           </h3>
-
+             <div>
+             {divs.map((elem) => {
+              if (elem.id === divName) {
+               return elem.Components.map((component, index) => (
+               <div key={index}><button onClick={LocateComponent(component.id,divName)}>{component.id}</button></div>
+              ));
+                }
+               return null;  
+              })}
+             </div>
+             
           <div className="flex flex-wrap gap-2 mt-4">
             {Object.keys(componentMap).map((key) => (
               <button
                 key={key}
                 onClick={() => compClick(key)}
-                className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
-              >
+                className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
                 {key}
               </button>
             ))}
